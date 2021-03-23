@@ -11,6 +11,7 @@ import com.javaspring.crud.api.entity.User;
 
 
 public interface UserService {
+	
 	public Optional<User>  findUserByEmail(String email);
 	    public Optional<User> findUserByToken(String token);
 	    public Optional<Randevular>  findRandevularByEmail(String email);

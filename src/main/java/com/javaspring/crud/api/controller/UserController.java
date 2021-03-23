@@ -47,6 +47,7 @@ public class UserController {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
 	@Autowired
 	private UserResetPaswordRepository userResetPasswordRepository;
 	
@@ -78,6 +79,7 @@ public class UserController {
 			return null;
 		}
 	}
+	
 	@PostMapping("/randevu")
 	public Randevular createRandevu(@RequestBody Randevular randevular) {
 		Optional<Randevular> u =userService.findRandevularBySaat(randevular.getSaat());
@@ -151,6 +153,7 @@ public class UserController {
 		return optional.get();
 		
 	}
+	
 	@PostMapping("newPass1")
 	public User dogrulama(@RequestBody User user) {
 	 User u = userRepository.findByToken(user.getToken());
@@ -167,6 +170,7 @@ public class UserController {
 		}
 		//return this.userRepository.save(user);
 	}
+	
 	@PostMapping("newPass")
 	public String newPassword(@RequestParam Map<String, String> requestParams) {
 	  Optional<User> user = userService.findUserByToken(requestParams.get("token"));
@@ -181,15 +185,5 @@ public class UserController {
 		  
 	  }
 	}
-	/* @GetMapping("newPass")
-	 public String newPassWordPage(@RequestParam("token") String token) {
-		 Optional<User> user = userService.findUserByToken(token);
-		 if(user.isPresent()) {
-			 return "token bulundu";
-		 }else {
-			 return "token bulunamadı";
-		 }
-	 
-	}*/
 	
 }

@@ -20,6 +20,14 @@ public class OgretimElemani {
 	@Column(name = "email")
 	private String email;
 	
+	
+	
+
+
+	public void setEnabled(boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
 	@Column(name = "Fakulte")
 	private String fakulte;
 	
@@ -34,9 +42,35 @@ public class OgretimElemani {
 	private  String anabilimdali;
 	
 	private  String unvan;
+	
+	private  boolean isEnabled;
+
+
+	public boolean getIsEnabled() {
+		return isEnabled;
+	}
 
 	
-	
+	public OgretimElemani(long id, String adSoyad, String email, String fakulte, String bolum, String sifre,
+			String token, String anabilimdali, String unvan, Boolean isEnabled) {
+		super();
+		this.id = id;
+		this.adSoyad = adSoyad;
+		this.email = email;
+		this.fakulte = fakulte;
+		this.bolum = bolum;
+		this.sifre = sifre;
+		this.token = token;
+		this.anabilimdali = anabilimdali;
+		this.unvan = unvan;
+		this.isEnabled = isEnabled;
+	}
+
+
+	public void setIsEnabled(Boolean isEnabled) {
+		this.isEnabled = isEnabled;
+	}
+
 	public String getUnvan() {
 		return unvan;
 	}
@@ -110,18 +144,6 @@ public class OgretimElemani {
 		this.anabilimdali = anabilimdali;
 	}
 
-	public OgretimElemani( String adSoyad, String email, String fakulte, String bolum, String sifre,
-			String token, String anabilimdali, String unvan) {
-		super();
-		this.adSoyad = adSoyad;
-		this.email = email;
-		this.fakulte = fakulte;
-		this.bolum = bolum;
-		this.sifre = sifre;
-		this.token = token;
-		this.anabilimdali = anabilimdali;
-		this.unvan= unvan;
-	}
 
 	public OgretimElemani() {
 		super();
@@ -131,7 +153,7 @@ public class OgretimElemani {
 	public String toString() {
 		return "OgretimElemani [id=" + id + ", adSoyad=" + adSoyad + ", email=" + email + ", fakulte=" + fakulte
 				+ ", bolum=" + bolum + ", sifre=" + sifre + ", token=" + token + ", anabilimdali=" + anabilimdali
-				+ ", unvan=" + unvan + "]";
+				+ ", unvan=" + unvan + ", isEnabled=" + isEnabled + "]";
 	}
 	
 	
